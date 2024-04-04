@@ -4,8 +4,8 @@ billboard_data <- read.csv(file.choose(), header = TRUE)
 
 # IMPORTING SPOTIFY API AND OTHER LIBRARIES
 library(spotifyr)
-Sys.setenv(SPOTIFY_CLIENT_ID = '7c55d9cd2542482e896b6c7ce689f39e')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = '5a334737836f48ed971886acba40937b')
+Sys.setenv(SPOTIFY_CLIENT_ID = 'XXXXXXXXXXXXXXXXXXXXXX')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = 'XXXXXXXXXXXXXXXXXXXXXX')
 library(dplyr)
 library(zoo)
 library(stringr)
@@ -102,7 +102,7 @@ for (i in tiktok_songs$Spotify.ID){
 tiktok_songs$artists <- artist
 tiktok_songs$song <- title
 
-write.csv(tiktok_songs, "C:\\Users\\zoeez\\Documents\\School\\UP Diliman\\AY 2022-2023\\2nd Sem\\Stat 136\\Tiktok_Songs.csv", row.names = TRUE)
+write.csv(tiktok_songs, "XXXXXXX\\Tiktok_Songs.csv", row.names = TRUE)
 
 # DETERMINING ARTIST APPEARANCE IN BILLBOARD CHART
 artist_popularity <- c()
@@ -118,7 +118,7 @@ artist_pop_data <- read.csv(file.choose(), header = TRUE)
 artist_pop_data <- artist_pop_data[, -c(2, 3)]
 tiktok_data_1 <- left_join(tiktok_data, artist_pop_data, by = "Spotify.ID")
 
-write.csv(tiktok_data_1, "C:\\Users\\zoeez\\Documents\\School\\UP Diliman\\AY 2022-2023\\2nd Sem\\Stat 136\\Final_Tiktok_Data.csv", row.names = TRUE)
+write.csv(tiktok_data_1, "XXXXXXX\\Final_Tiktok_Data.csv", row.names = TRUE)
 
 # EARLIEST AND LATEST
 tiktok_data_2 <- read.csv(file.choose(), header = TRUE)
@@ -140,5 +140,5 @@ tiktok_data_4 <- tiktok_data_2 %>%
 tiktok_data_4 <- tiktok_data_4[!duplicated(tiktok_data_4$Spotify.ID),]
 tiktok_data_4 <- tiktok_data_4[-593,]
 
-write.csv(tiktok_data_3, "C:\\Users\\zoeez\\Documents\\School\\UP Diliman\\AY 2022-2023\\2nd Sem\\Stat 136\\Final_Tiktok_Data_Latest.csv", row.names = TRUE)
-write.csv(tiktok_data_4, "C:\\Users\\zoeez\\Documents\\School\\UP Diliman\\AY 2022-2023\\2nd Sem\\Stat 136\\Final_Tiktok_Data_Earliest.csv", row.names = TRUE)
+write.csv(tiktok_data_3, "XXXXXXX\\Final_Tiktok_Data_Latest.csv", row.names = TRUE)
+write.csv(tiktok_data_4, "XXXXXXX\\Final_Tiktok_Data_Earliest.csv", row.names = TRUE)
